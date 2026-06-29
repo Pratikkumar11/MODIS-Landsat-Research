@@ -63,7 +63,7 @@ This repository documents the complete research process, including literature re
 MCA, Birla Institute of Technology, Mesra
 
 GitHub: https://github.com/Pratikkumar11
-LinkedIn: https://www.linkedin.com/in/pratik-kumar-bhagat-421338286
+
 
 ---
 
