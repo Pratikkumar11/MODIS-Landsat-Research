@@ -1,0 +1,260 @@
+# Part 3 – Landsat Satellite System
+
+# 4. Landsat Satellite
+
+## 4.1 Introduction
+
+The Landsat program is the world's longest continuously operating Earth observation satellite mission. It is jointly managed by the **National Aeronautics and Space Administration (NASA)** and the **United States Geological Survey (USGS)**. Since the launch of the first Landsat satellite in 1972, the mission has continuously provided high-quality satellite imagery for scientific research, environmental monitoring, agriculture, forestry, geology, urban planning, and climate studies.
+
+Unlike MODIS, which focuses on frequent observations with moderate spatial resolution, Landsat provides significantly higher spatial resolution images that allow detailed visualization of the Earth's surface. This makes Landsat one of the most valuable sources of satellite imagery for land-cover mapping and thermal analysis.
+
+The long historical archive of Landsat images, spanning more than five decades, has enabled researchers to study long-term environmental changes, including deforestation, urban expansion, glacier retreat, drought, desertification, and climate change.
+
+---
+
+# 4.2 Evolution of the Landsat Program
+
+The Landsat mission has undergone continuous technological improvements through multiple generations of satellites.
+
+| Satellite | Launch Year | Status      |
+| --------- | ----------- | ----------- |
+| Landsat-1 | 1972        | Retired     |
+| Landsat-2 | 1975        | Retired     |
+| Landsat-3 | 1978        | Retired     |
+| Landsat-4 | 1982        | Retired     |
+| Landsat-5 | 1984        | Retired     |
+| Landsat-7 | 1999        | Operational |
+| Landsat-8 | 2013        | Operational |
+| Landsat-9 | 2021        | Operational |
+
+Each generation introduced improvements in sensor accuracy, radiometric quality, spectral resolution, and thermal imaging capabilities.
+
+---
+
+# 4.3 Landsat-8 Satellite
+
+This research primarily utilizes imagery obtained from **Landsat-8**, which carries two advanced imaging sensors:
+
+### Operational Land Imager (OLI)
+
+The Operational Land Imager captures visible, near-infrared, and shortwave infrared imagery with high spatial resolution.
+
+It provides data for:
+
+* Vegetation monitoring
+* Agriculture
+* Land use mapping
+* Water resources
+* Urban planning
+* Environmental studies
+
+---
+
+### Thermal Infrared Sensor (TIRS)
+
+The Thermal Infrared Sensor measures thermal radiation emitted from the Earth's surface.
+
+Thermal information is extremely important for:
+
+* Land Surface Temperature estimation
+* Drought monitoring
+* Forest fire detection
+* Volcano monitoring
+* Urban Heat Island studies
+* Climate analysis
+
+The TIRS sensor provides two thermal bands:
+
+* Band 10
+* Band 11
+
+Most thermal studies primarily utilize **Band 10** because it generally offers more reliable temperature measurements.
+
+---
+
+# 4.4 Technical Specifications
+
+| Parameter                | Value                     |
+| ------------------------ | ------------------------- |
+| Agency                   | NASA / USGS               |
+| Launch Year              | 2013                      |
+| Orbit Type               | Sun-synchronous           |
+| Altitude                 | 705 km                    |
+| Revisit Period           | 16 days                   |
+| Swath Width              | 185 km                    |
+| Number of Spectral Bands | 11                        |
+| Spatial Resolution       | 30 m (Visible & Infrared) |
+| Thermal Resolution       | 100 m (Resampled to 30 m) |
+
+These specifications make Landsat suitable for detailed environmental monitoring.
+
+---
+
+# 4.5 Spectral Bands of Landsat-8
+
+Landsat-8 contains eleven spectral bands.
+
+| Band    | Wavelength       | Purpose                  |
+| ------- | ---------------- | ------------------------ |
+| Band 1  | Coastal          | Coastal studies          |
+| Band 2  | Blue             | Water mapping            |
+| Band 3  | Green            | Vegetation               |
+| Band 4  | Red              | Land cover               |
+| Band 5  | Near Infrared    | Vegetation               |
+| Band 6  | SWIR 1           | Soil moisture            |
+| Band 7  | SWIR 2           | Mineral mapping          |
+| Band 8  | Panchromatic     | High-resolution imaging  |
+| Band 9  | Cirrus           | Cloud detection          |
+| Band 10 | Thermal Infrared | Land Surface Temperature |
+| Band 11 | Thermal Infrared | Surface Temperature      |
+
+Band 10 plays a central role in this research because it provides thermal information used as the reference (ground truth) during CNN training.
+
+---
+
+# 4.6 Advantages of Landsat
+
+The Landsat mission offers numerous advantages.
+
+### High Spatial Resolution
+
+The most important advantage is its high spatial resolution, allowing researchers to distinguish roads, rivers, agricultural fields, buildings, forests, and urban structures.
+
+---
+
+### Long Historical Archive
+
+More than fifty years of continuously collected imagery makes Landsat one of the richest environmental datasets available.
+
+---
+
+### Free Availability
+
+All Landsat imagery can be downloaded freely through the USGS Earth Explorer platform.
+
+---
+
+### Accurate Thermal Measurements
+
+Thermal bands provide reliable estimates of land surface temperature suitable for scientific research.
+
+---
+
+### Multi-Spectral Observations
+
+The eleven spectral bands support a wide range of environmental applications.
+
+---
+
+# 4.7 Limitations of Landsat
+
+Despite its high quality, Landsat also has several limitations.
+
+### Low Temporal Resolution
+
+The satellite revisits the same location approximately every sixteen days.
+
+If cloud cover exists during acquisition, researchers may need to wait another sixteen days.
+
+---
+
+### Limited Daily Monitoring
+
+Unlike MODIS, Landsat cannot provide daily observations.
+
+This limits applications requiring continuous environmental monitoring.
+
+---
+
+### Cloud Contamination
+
+Visible and infrared observations are strongly affected by cloud cover.
+
+Clouds obscure the Earth's surface, reducing the availability of useful imagery.
+
+---
+
+# 4.8 Applications of Landsat
+
+Landsat imagery is extensively used in numerous domains.
+
+Major applications include:
+
+* Agricultural monitoring
+* Crop classification
+* Forest management
+* Water resource monitoring
+* Urban expansion analysis
+* Land cover classification
+* Glacier monitoring
+* Wetland mapping
+* Drought assessment
+* Surface temperature estimation
+* Climate change studies
+* Disaster management
+
+The versatility of Landsat has made it one of the most widely used satellite systems worldwide.
+
+---
+
+# 4.9 MODIS vs Landsat
+
+Both satellites possess complementary characteristics.
+
+| Feature             | MODIS     | Landsat   |
+| ------------------- | --------- | --------- |
+| Spatial Resolution  | 1000 m    | 30 m      |
+| Temporal Resolution | Daily     | 16 Days   |
+| Swath Width         | 2330 km   | 185 km    |
+| Thermal Imaging     | Yes       | Yes       |
+| Global Coverage     | Excellent | Moderate  |
+| Fine Spatial Detail | Poor      | Excellent |
+
+This comparison illustrates why combining MODIS and Landsat is beneficial.
+
+MODIS provides frequent observations, while Landsat provides detailed spatial information.
+
+---
+
+# 4.10 Need for Image Fusion
+
+Neither MODIS nor Landsat individually satisfies all application requirements.
+
+Researchers often require:
+
+* High spatial resolution
+* High temporal resolution
+* Accurate thermal information
+* Frequent observations
+
+Unfortunately,
+
+* MODIS offers excellent temporal resolution but poor spatial resolution.
+* Landsat offers excellent spatial resolution but poor temporal resolution.
+
+Therefore, image fusion techniques combine the strengths of both satellites.
+
+The objective is to generate high-resolution thermal images with the temporal frequency of MODIS and the spatial detail of Landsat.
+
+---
+
+# 4.11 Role of Landsat in This Research
+
+In this project, Landsat thermal imagery serves as the target output during CNN training.
+
+The workflow consists of:
+
+1. Downloading Landsat Band 10 thermal images.
+2. Aligning them with corresponding MODIS images.
+3. Performing preprocessing and normalization.
+4. Training the CNN using paired MODIS–Landsat images.
+5. Learning the mapping between low-resolution and high-resolution thermal information.
+6. Predicting Landsat-like thermal images using only MODIS input during inference.
+
+Thus, Landsat provides the reference information required for supervised deep learning.
+
+---
+
+# 4.12 Summary
+
+The Landsat satellite mission provides one of the highest-quality publicly available Earth observation datasets. Its high spatial resolution allows detailed visualization of land surface features, making it highly valuable for environmental monitoring and thermal analysis. However, the relatively long revisit period limits its usefulness for applications requiring continuous observations. By combining Landsat with MODIS through deep learning-based image fusion, researchers can leverage the strengths of both satellite systems. The next chapter introduces image fusion techniques and discusses how artificial intelligence has transformed modern satellite image enhancement.
