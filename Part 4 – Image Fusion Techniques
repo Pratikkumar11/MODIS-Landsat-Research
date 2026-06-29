@@ -1,0 +1,368 @@
+5. Image Fusion
+5.1 Introduction
+
+Satellite sensors differ significantly in their spatial, spectral, temporal, and radiometric resolutions. No single satellite sensor can simultaneously provide high spatial resolution, high temporal resolution, and complete spectral information. This limitation creates challenges in applications such as environmental monitoring, precision agriculture, climate studies, disaster management, and urban planning.
+
+Image fusion is a technique developed to overcome these limitations by combining information from multiple satellite images into a single image containing more useful information than any individual source image.
+
+In this research, image fusion combines the high temporal resolution of MODIS with the high spatial resolution of Landsat to generate detailed thermal images that are available more frequently than Landsat observations alone.
+
+5.2 What is Image Fusion?
+
+Image fusion is the process of integrating complementary information from two or more images acquired from different sensors, viewpoints, or times into a single enhanced image.
+
+The objective of image fusion is to preserve the important characteristics of each source image while improving the overall quality and usefulness of the resulting image.
+
+For example,
+
+MODIS provides daily observations but low spatial resolution.
+Landsat provides detailed spatial resolution but only revisits every sixteen days.
+
+Image fusion combines these strengths to produce high-resolution thermal images with frequent temporal availability.
+
+5.3 Objectives of Image Fusion
+
+The primary objectives of image fusion include:
+
+Improve spatial resolution.
+Preserve spectral characteristics.
+Increase temporal resolution.
+Reduce missing observations caused by cloud cover.
+Enhance image quality.
+Improve object detection.
+Support environmental monitoring.
+Improve thermal image analysis.
+Generate accurate datasets for deep learning applications.
+5.4 Importance of Image Fusion
+
+Image fusion has become increasingly important because modern Earth observation relies on multiple satellite missions rather than a single sensor.
+
+A fused image contains richer information that improves decision-making across numerous domains.
+
+Major advantages include:
+
+Better visualization
+More accurate land-cover classification
+Improved temperature estimation
+Better change detection
+Enhanced vegetation monitoring
+Increased mapping accuracy
+Higher reliability for scientific analysis
+5.5 Levels of Image Fusion
+
+Image fusion can be performed at different processing levels.
+
+5.5.1 Pixel-Level Fusion
+
+Pixel-level fusion combines images by directly processing individual pixel values.
+
+Characteristics:
+
+Highest information preservation
+High computational cost
+Most commonly used in satellite image enhancement
+Suitable for CNN-based image fusion
+
+Our research mainly focuses on pixel-level fusion.
+
+5.5.2 Feature-Level Fusion
+
+Feature-level fusion combines extracted image features instead of raw pixels.
+
+Common extracted features include:
+
+Edges
+Corners
+Texture
+Shape
+Color information
+
+Feature-level fusion reduces data redundancy while preserving meaningful image characteristics.
+
+5.5.3 Decision-Level Fusion
+
+Decision-level fusion combines the outputs of multiple algorithms instead of combining images directly.
+
+Examples include:
+
+Multiple classifiers
+Multiple neural networks
+Different segmentation algorithms
+
+The final output is obtained through voting or probability-based decision making.
+
+5.6 Types of Satellite Image Fusion
+
+Satellite image fusion can be classified according to the type of information being combined.
+
+Spatial Fusion
+
+Spatial fusion aims to improve image detail while preserving important structures.
+
+Example:
+
+High-resolution Landsat
+Low-resolution MODIS
+
+Output:
+
+High-resolution thermal image.
+
+Spectral Fusion
+
+Spectral fusion combines different wavelength bands to improve spectral representation.
+
+Applications include:
+
+Vegetation monitoring
+Mineral exploration
+Water analysis
+Temporal Fusion
+
+Temporal fusion combines images captured at different times.
+
+Applications:
+
+Crop monitoring
+Seasonal analysis
+Forest monitoring
+Climate studies
+Multi-Sensor Fusion
+
+Multi-sensor fusion combines data from different satellite sensors.
+
+Example:
+
+MODIS + Landsat
+
+This is the approach adopted in this research.
+
+5.7 Traditional Image Fusion Techniques
+
+Before deep learning became popular, researchers used mathematical and statistical techniques for image fusion.
+
+5.7.1 Principal Component Analysis (PCA)
+
+PCA transforms correlated image bands into independent principal components.
+
+Advantages:
+
+Reduces redundancy
+Simple implementation
+Fast processing
+
+Limitations:
+
+Loss of spectral information
+Limited preservation of image details
+5.7.2 Intensity-Hue-Saturation (IHS)
+
+IHS converts RGB images into Intensity, Hue, and Saturation components.
+
+The intensity component is replaced with a higher-resolution image.
+
+Advantages:
+
+Good visual enhancement
+Easy implementation
+
+Disadvantages:
+
+Spectral distortion
+Applicable mainly to RGB imagery
+5.7.3 Wavelet Transform
+
+Wavelet Transform decomposes images into multiple frequency components before combining them.
+
+Advantages:
+
+Better edge preservation
+Multi-resolution analysis
+Improved image quality
+
+Disadvantages:
+
+Computationally expensive
+Complex implementation
+5.7.4 Brovey Transform
+
+Brovey Transform improves image contrast by preserving brightness relationships.
+
+Advantages:
+
+Simple algorithm
+Good visual appearance
+
+Disadvantages:
+
+Spectral distortion
+Limited scientific accuracy
+5.8 Deep Learning-Based Image Fusion
+
+Traditional methods rely on mathematical equations and manually designed transformations.
+
+Modern image fusion increasingly employs deep learning, enabling models to automatically learn complex relationships between images.
+
+Deep learning methods produce significantly better results because they learn hierarchical image features directly from data.
+
+Advantages include:
+
+Better feature extraction
+Reduced noise
+Higher spatial accuracy
+Improved texture preservation
+End-to-end learning
+Better generalization
+5.9 Convolutional Neural Networks (CNN)
+
+Convolutional Neural Networks have become one of the most effective approaches for satellite image fusion.
+
+CNNs automatically learn spatial patterns through convolution operations.
+
+The network gradually learns:
+
+Edges
+Corners
+Shapes
+Textures
+Thermal patterns
+High-level spatial features
+
+Unlike traditional methods, CNNs do not require manually engineered features.
+
+5.10 CNN-Based Image Fusion Process
+
+The general workflow consists of:
+
+Input paired MODIS and Landsat images.
+Preprocess and normalize images.
+Divide images into patches.
+Feed MODIS patches into the CNN.
+Compare predictions with Landsat patches.
+Compute loss.
+Update network weights using backpropagation.
+Generate high-resolution thermal predictions.
+
+The trained CNN learns how to reconstruct Landsat-like thermal images using only MODIS data.
+
+5.11 U-Net for Image Fusion
+
+U-Net is an encoder-decoder neural network widely used for image segmentation and image restoration.
+
+Advantages:
+
+Skip connections preserve spatial information.
+Better reconstruction quality.
+Accurate boundary preservation.
+Effective for satellite imagery.
+
+Although not used in the final implementation of this project, U-Net remains one of the most popular architectures for image fusion research.
+
+5.12 Generative Adversarial Networks (GANs)
+
+GANs consist of two neural networks:
+
+Generator
+Discriminator
+
+The generator produces synthetic high-resolution images.
+
+The discriminator attempts to distinguish real images from generated images.
+
+Both networks improve simultaneously during training.
+
+Advantages:
+
+Highly realistic outputs
+Sharp image reconstruction
+Excellent texture generation
+
+Disadvantages:
+
+Difficult training
+High computational cost
+Possible instability
+5.13 Transformer-Based Image Fusion
+
+Vision Transformers (ViTs) and Swin Transformers have recently been applied to satellite image fusion.
+
+Advantages:
+
+Capture long-range spatial relationships
+Better global context
+Superior performance on large datasets
+
+However,
+
+Transformers require:
+
+Large datasets
+Powerful GPUs
+Longer training time
+5.14 Challenges in Image Fusion
+
+Despite significant progress, image fusion still faces several challenges.
+
+Different Spatial Resolutions
+
+MODIS and Landsat have vastly different pixel sizes.
+
+Proper alignment is necessary before fusion.
+
+Temporal Mismatch
+
+Images captured on different dates may contain seasonal changes.
+
+Cloud Coverage
+
+Clouds reduce the availability of usable image pairs.
+
+Sensor Noise
+
+Different sensors introduce different types of noise.
+
+Image Registration
+
+Accurate geographic alignment is essential.
+
+Even small shifts reduce fusion quality.
+
+Limited Training Data
+
+Deep learning requires many paired images.
+
+Obtaining perfectly aligned MODIS-Landsat datasets remains difficult.
+
+5.15 Image Fusion in This Research
+
+This research employs a deep learning-based CNN model for thermal image fusion.
+
+The workflow includes:
+
+Downloading MODIS and Landsat images.
+Extracting the same Region of Interest (ROI).
+Resizing both datasets.
+Performing normalization.
+Creating paired image patches.
+Training a CNN using MODIS as input and Landsat as target.
+Predicting high-resolution thermal images.
+
+Unlike traditional image fusion methods, the CNN automatically learns the relationship between low-resolution MODIS data and high-resolution Landsat thermal imagery.
+
+5.16 Benefits of Deep Learning Image Fusion
+
+The proposed deep learning approach provides several advantages:
+
+Automatic feature extraction
+Better thermal image reconstruction
+Higher spatial resolution
+Reduced manual feature engineering
+Improved prediction accuracy
+Better generalization to unseen data
+End-to-end learning framework
+
+These advantages make deep learning particularly suitable for modern remote sensing applications.
+
+5.17 Summary
+
+Image fusion is an essential technique for overcoming the limitations of individual satellite sensors. Traditional methods such as PCA, IHS, Wavelet Transform, and Brovey Transform improve image quality but often fail to preserve all important spatial and spectral information. Deep learning approaches, especially Convolutional Neural Networks (CNNs), have significantly advanced image fusion by learning complex relationships directly from data. In this research, a CNN-based image fusion model combines MODIS and Landsat thermal imagery to generate high-resolution thermal images with improved spatial detail and enhanced temporal availability. The next chapter presents the deep learning concepts and CNN architecture used for implementing the proposed fusion model.
