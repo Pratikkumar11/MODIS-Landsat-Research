@@ -1,0 +1,323 @@
+# Part 2 – Remote Sensing Fundamentals and MODIS Satellite
+
+# 2. Remote Sensing Fundamentals
+
+## 2.1 Introduction to Remote Sensing
+
+Remote sensing is the science of acquiring information about the Earth's surface without making direct physical contact with the observed object. Instead of ground-based measurements, sensors mounted on satellites, aircraft, drones, or other platforms detect and record electromagnetic radiation reflected or emitted from various objects. The collected information is then processed and analyzed to identify physical characteristics of the Earth's surface.
+
+Remote sensing has become one of the most important technologies for environmental monitoring, resource management, agriculture, urban planning, meteorology, geology, disaster response, and climate studies. Continuous observations from Earth observation satellites allow scientists to monitor large geographical regions quickly, economically, and repeatedly.
+
+Modern satellite remote sensing systems collect data across multiple regions of the electromagnetic spectrum, including visible, near-infrared, shortwave infrared, thermal infrared, and microwave wavelengths. Each spectral region provides unique information about vegetation, soil, water, temperature, clouds, and land cover.
+
+Unlike conventional field surveys, remote sensing offers several advantages:
+
+* Large-scale coverage
+* Frequent observations
+* Cost-effective monitoring
+* Multi-spectral information
+* Long-term historical records
+* Near real-time data acquisition
+
+These advantages make satellite remote sensing an indispensable technology for modern Earth observation.
+
+---
+
+## 2.2 Principles of Remote Sensing
+
+Remote sensing operates based on the interaction between electromagnetic radiation and the Earth's surface.
+
+The general process involves:
+
+1. Energy emitted from the Sun or Earth.
+2. Radiation travels through the atmosphere.
+3. Objects on Earth's surface absorb, reflect, or emit radiation.
+4. Satellite sensors detect the returned energy.
+5. Data are transmitted to ground stations.
+6. Images are processed and analyzed.
+
+The amount of reflected or emitted energy depends upon:
+
+* Surface temperature
+* Vegetation density
+* Soil moisture
+* Surface roughness
+* Water content
+* Material composition
+
+Different land cover types therefore produce unique spectral signatures that allow automatic classification and analysis.
+
+---
+
+## 2.3 Types of Remote Sensing
+
+Remote sensing systems are broadly classified into two categories.
+
+### Passive Remote Sensing
+
+Passive sensors depend upon natural energy sources such as sunlight or thermal emission from the Earth.
+
+Examples include:
+
+* MODIS
+* Landsat
+* Sentinel-2
+
+Passive systems collect reflected solar radiation during daytime and emitted thermal radiation in thermal infrared wavelengths.
+
+Advantages:
+
+* Natural illumination
+* High-quality multispectral images
+* Lower power consumption
+
+Limitations:
+
+* Cannot image through clouds effectively
+* Limited nighttime observations for visible bands
+
+---
+
+### Active Remote Sensing
+
+Active sensors generate their own electromagnetic radiation and measure the reflected signal.
+
+Examples include:
+
+* Synthetic Aperture Radar (SAR)
+* LiDAR
+
+Advantages:
+
+* Works during day and night
+* Penetrates clouds
+* Independent of sunlight
+
+Disadvantages:
+
+* Higher system complexity
+* Increased operational cost
+
+---
+
+## 2.4 Resolution in Remote Sensing
+
+Satellite imagery is characterized using four important resolutions.
+
+### Spatial Resolution
+
+Spatial resolution defines the ground area represented by a single pixel.
+
+Examples:
+
+* MODIS Thermal: 1000 m
+* Landsat Thermal: 100 m (resampled to 30 m)
+* Sentinel-2: 10 m
+
+Higher spatial resolution provides finer image details.
+
+---
+
+### Temporal Resolution
+
+Temporal resolution indicates how frequently a satellite revisits the same location.
+
+Examples:
+
+* MODIS: Daily
+* Landsat: Every 16 days
+* Sentinel-2: Approximately 5 days
+
+High temporal resolution is useful for monitoring rapidly changing environments.
+
+---
+
+### Spectral Resolution
+
+Spectral resolution represents the number and width of wavelength bands measured by the sensor.
+
+More spectral bands enable better identification of vegetation, minerals, water, soil, and atmospheric conditions.
+
+---
+
+### Radiometric Resolution
+
+Radiometric resolution defines the sensor's ability to distinguish small differences in energy intensity.
+
+Higher radiometric resolution allows detection of subtle temperature or brightness variations.
+
+---
+
+# 3. MODIS Satellite
+
+## 3.1 Introduction
+
+The Moderate Resolution Imaging Spectroradiometer (MODIS) is one of the most widely used Earth observation instruments developed by NASA.
+
+MODIS is installed aboard:
+
+* Terra Satellite (launched in 1999)
+* Aqua Satellite (launched in 2002)
+
+Together these satellites provide nearly complete global coverage every one to two days, making MODIS one of the most valuable sources of Earth observation data.
+
+The instrument continuously monitors:
+
+* Land
+* Oceans
+* Atmosphere
+* Vegetation
+* Snow
+* Ice
+* Clouds
+* Surface temperature
+
+Its frequent observations make it highly suitable for environmental monitoring.
+
+---
+
+## 3.2 Objectives of MODIS
+
+The major objectives include:
+
+* Global land monitoring
+* Ocean observation
+* Climate studies
+* Forest monitoring
+* Agricultural assessment
+* Disaster management
+* Surface temperature estimation
+* Atmospheric analysis
+
+MODIS products support thousands of scientific studies worldwide.
+
+---
+
+## 3.3 MODIS Sensor Characteristics
+
+Important specifications include:
+
+| Parameter           | Value                |
+| ------------------- | -------------------- |
+| Agency              | NASA                 |
+| Satellites          | Terra and Aqua       |
+| Launch Years        | 1999, 2002           |
+| Number of Bands     | 36                   |
+| Spectral Range      | 0.4–14.4 µm          |
+| Swath Width         | 2330 km              |
+| Temporal Resolution | Daily                |
+| Spatial Resolution  | 250 m, 500 m, 1000 m |
+
+The extremely wide swath enables complete Earth coverage every one to two days.
+
+---
+
+## 3.4 MODIS Products
+
+NASA distributes numerous MODIS products for different applications.
+
+Examples include:
+
+* MOD11A1 – Land Surface Temperature
+* MOD13Q1 – Vegetation Index
+* MOD09GA – Surface Reflectance
+* MOD14A1 – Fire Detection
+* MOD16A2 – Evapotranspiration
+* MOD44B – Vegetation Cover
+
+This research primarily uses the **MOD11A1 Land Surface Temperature (LST)** product.
+
+---
+
+## 3.5 MOD11A1 Land Surface Temperature Product
+
+MOD11A1 provides daily estimates of land surface temperature at approximately 1 km spatial resolution.
+
+Important characteristics:
+
+* Daily observations
+* Global coverage
+* Daytime and nighttime temperature
+* HDF format
+* Scale factor: 0.02
+* Kelvin temperature values
+
+Before analysis, the stored pixel values must be multiplied by the scale factor to obtain actual temperature measurements.
+
+---
+
+## 3.6 Advantages of MODIS
+
+Major advantages include:
+
+* Daily global observations
+* Large swath width
+* Freely available data
+* Reliable temperature estimation
+* Long historical archive
+* Suitable for climate monitoring
+* Excellent temporal resolution
+
+These properties make MODIS ideal for long-term environmental studies.
+
+---
+
+## 3.7 Limitations of MODIS
+
+Despite its advantages, MODIS has several limitations.
+
+The most significant limitation is its relatively low spatial resolution.
+
+A single thermal pixel represents approximately one square kilometre on the ground.
+
+Consequently, small geographical objects become blurred, including:
+
+* Buildings
+* Roads
+* Agricultural fields
+* Small rivers
+* Urban structures
+
+This limitation motivates the use of image fusion techniques to improve spatial detail.
+
+---
+
+## 3.8 Applications of MODIS
+
+MODIS data are widely applied in:
+
+* Forest fire monitoring
+* Crop health assessment
+* Drought analysis
+* Flood monitoring
+* Climate change research
+* Land surface temperature estimation
+* Urban heat island analysis
+* Vegetation monitoring
+* Water resource management
+* Environmental impact assessment
+
+Government agencies and research organizations worldwide rely heavily on MODIS products.
+
+---
+
+## 3.9 Role of MODIS in This Research
+
+In this study, MODIS serves as the primary input dataset for the deep learning model.
+
+The workflow involves:
+
+1. Downloading MOD11A1 thermal images.
+2. Preprocessing and normalization.
+3. Aligning MODIS data with corresponding Landsat images.
+4. Training a CNN model using paired datasets.
+5. Predicting Landsat-like high-resolution thermal images from MODIS input.
+6. Displaying predictions through a Flask–React web application.
+
+The use of MODIS enables frequent thermal monitoring while the deep learning model enhances the spatial quality of the generated images.
+
+---
+
+## 2.10 Summary
+
+Remote sensing provides an efficient approach for observing the Earth's surface at regional and global scales. Among modern Earth observation sensors, MODIS is particularly valuable because of its daily temporal coverage and extensive range of environmental products. However, its coarse spatial resolution limits applications requiring fine surface details. This limitation motivates the integration of deep learning-based image fusion techniques with higher-resolution satellite imagery such as Landsat. The following chapter introduces the Landsat satellite system and explains why it complements MODIS in thermal image fusion applications.
